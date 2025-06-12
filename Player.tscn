@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://4tc31m07m56"]
+
+[ext_resource type="Script" uid="uid://dtvw2hyp1q258" path="res://player.gd" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://ccncpmqkeypmq" path="res://textures/нолик.png" id="2_kpjcp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpjcp"]
+radius = 64.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_xhfnw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.500001, -0.500009)
+scale = Vector2(0.234545, 0.234545)
+texture = ExtResource("2_kpjcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kpjcp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

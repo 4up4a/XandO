@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqnefdei5fyyn"]
+
+[ext_resource type="Script" uid="uid://mb3jv5j6e7ym" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://4tc31m07m56" path="res://Player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cty8rd1k7dvnu" path="res://mob.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cu6mqqcecpps" path="res://hud.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cl4d6qjpsbc61" path="res://exp.tscn" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://dr7fpo4p6n6b5" path="res://textures/back.png" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cge2w2jhtlvja" path="res://joy.tscn" id="6_7mycd"]
+[ext_resource type="AudioStream" uid="uid://6m8i37d2g8jd" path="res://boom.mp3" id="8_5vw27"]
+
+[sub_resource type="Curve2D" id="Curve2D_lquwl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 720, 1, 0, 0, 0, 0, 720, 1520, 0, 0, 0, 0, 0, 1520, 0, 0, 0, 0, 2, 1025, 0, 0, 0, 0, 0, 1025, 0, 0, 0, 0, 0, 1)
+}
+point_count = 7
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ig7tw")
+mob_scene = ExtResource("3_h2yge")
+boom = ExtResource("5_272bh")
+
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(426, 804)
+rotation = 1.5708
+texture = ExtResource("5_lquwl")
+
+[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(-85, 0)
+explosion = ExtResource("5_272bh")
+
+[node name="MobTimer" type="Timer" parent="."]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(360, 512)
+
+[node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_lquwl")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2(0, 1)
+
+[node name="joy" parent="." instance=ExtResource("6_7mycd")]
+visible = false
+visibility_layer = 1023
+position = Vector2(485, 1326)
+
+[node name="boomsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_5vw27")
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]

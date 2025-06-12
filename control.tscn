@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhocupkbhjrj3"]
+
+[ext_resource type="Script" uid="uid://yte3hrutjq43" path="res://addons/virtual_joystick/virtual_joystick.gd" id="1_0fbet"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="VirtualJoystick" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0fbet")
+joystick_mode = 1
+metadata/_custom_type_script = "uid://yte3hrutjq43"

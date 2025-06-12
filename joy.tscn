@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cge2w2jhtlvja"]
+
+[ext_resource type="Script" uid="uid://byt0bc2setm08" path="res://joy.gd" id="1_is8dj"]
+[ext_resource type="Texture2D" uid="uid://ccncpmqkeypmq" path="res://textures/нолик.png" id="2_is8dj"]
+[ext_resource type="Texture2D" uid="uid://ccrolsnmvm766" path="res://textures/нолик2.png" id="3_x7nik"]
+[ext_resource type="Script" uid="uid://ceddm5gh4tj56" path="res://knob.gd" id="4_he3f0"]
+
+[node name="joy" type="Node2D"]
+position = Vector2(250, 250)
+script = ExtResource("1_is8dj")
+
+[node name="Ring" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_is8dj")
+
+[node name="Knob" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_x7nik")
+script = ExtResource("4_he3f0")
+
+[node name="Button" type="Button" parent="."]
+light_mask = 0
+visibility_layer = 0
+offset_left = -111.0
+offset_top = -111.0
+offset_right = 111.0
+offset_bottom = 111.0
+
+[connection signal="button_down" from="Button" to="Knob" method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="Knob" method="_on_button_button_up"]

@@ -21,16 +21,6 @@ In *Dodge the X's!*, you control a O character moving around a  field, trying to
 
 ---
 
-## 🧰 Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla or framework of your choice)
-
-*(Update this section depending on what tech stack you used.)*
-
----
-
 ## 🚀 How to Play
 
 1. Use `Arrow Keys` or `W`, `A`, `S`, `D` to move your O character.
@@ -40,15 +30,4 @@ In *Dodge the X's!*, you control a O character moving around a  field, trying to
 
 ---
 
-## 📦 Installation & Running
 
-To run the game locally:
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/dodge-the-xs.git 
-
-# Navigate into the directory
-cd dodge-the-xs
-
-# Open the index.html file in your browser

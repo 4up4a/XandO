@@ -2,8 +2,6 @@
 
 A simple yet addictive arcade game where you play as the **O**, dodging relentless **X's** that are chasing you down. How long can you survive?
 
-![Game Screenshot](screenshot.png) *(Add a screenshot of your game here)*
-
 ## 🕹️ About the Game
 
 In *Dodge the X's!*, you control a O character moving around a  field, trying to avoid fast-approaching X enemies.

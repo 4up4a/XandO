@@ -6,9 +6,8 @@ A simple yet addictive arcade game where you play as the **O**, dodging relentle
 
 ## 🕹️ About the Game
 
-In *Dodge the X's!*, you control a small O character moving around a grid-like field, trying to avoid fast-approaching X enemies. The longer you survive, the harder it gets — the X's speed up and become more aggressive!
+In *Dodge the X's!*, you control a O character moving around a  field, trying to avoid fast-approaching X enemies.
 
-Perfect for fans of retro arcade games with a modern twist.
 
 ---
 
